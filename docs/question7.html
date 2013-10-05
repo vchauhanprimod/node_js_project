@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>question7.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>question7.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p><strong>Problem7</strong>:<br>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.<br>What is the 10 001st prime number?  </p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>10001st prime</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> http = require(<span class="string">'http'</span>);
+http.createServer(<span class="function"><span class="keyword">function</span> <span class="params">(req, res)</span> {</span>
+    <span class="keyword">if</span> (req.url == <span class="string">"/"</span>) {
+        res.writeHead(<span class="number">200</span>, {
+            <span class="string">'Content-Type'</span>: <span class="string">'text/js'</span>
+        });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>variable to hold the count of prime numbers</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">var</span> flag=<span class="number">0</span>;
+        <span class="keyword">var</span> count=<span class="number">0</span>;
+        <span class="keyword">var</span> p=<span class="number">0</span>;
+        n=<span class="number">2</span>;
+        <span class="keyword">var</span> i;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>infinite loop</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">while</span>(<span class="number">1</span>)
+        {
+            count=<span class="number">0</span>;
+            <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n/<span class="number">2</span>;i++)
+            {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>to check whether the number is prime</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="keyword">if</span>(n%i==<span class="number">0</span>)
+                {
+                    count=<span class="number">1</span>;
+                    <span class="keyword">break</span>;
+                }
+            }
+            <span class="keyword">if</span> (count==<span class="number">0</span>)
+            {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>p holds the value of prime number</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                p=n;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>to count the number of primes</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                flag+=<span class="number">1</span>; 
+            }
+            <span class="keyword">if</span>(flag==<span class="number">10001</span>)
+            {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>it prints the 10001st prime number</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                console.log(p);
+                <span class="keyword">break</span>;
+            }
+            n++;
+        }
+    }
+}).listen(<span class="number">1337</span>, <span class="string">"localhost"</span>);
+console.log(<span class="string">'Server running at http://localhost:1337/'</span>);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
